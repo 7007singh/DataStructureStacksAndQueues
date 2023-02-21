@@ -1,4 +1,6 @@
 ﻿using System;
+using System.CodeDom.Compiler;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,21 +11,40 @@ namespace DataStructureStacksAndQueues
     internal class StackLinkedList
     {
         public Node top;
-        
-        public void Push(int data)
+
+        internal void Push(int data)
         {
             Node newNode = new Node(data);
             if (top == null)
             {
-                top = newNode;
-                Console.WriteLine("{0} pushed to stack ", newNode.data);
+                newNode.next = null;
             }
             else
             {
                 newNode.next = top;
-                top = newNode;
-                Console.WriteLine("{0} pushed to stack ", newNode.data);
             }
+            top = newNode;
+            Console.WriteLine("{0} pushed", data);
+        }
+        internal void Pop()
+        {
+            if (top == null)
+            {
+                Console.WriteLine("Stack is empty. please add node to pop");
+                return;
+            }
+
+            Console.WriteLine("{0} poped", top.data);
+            top = top.next;
+        }
+        internal void Peek()
+        {
+            if (top == null)
+            {
+                Console.WriteLine("Stack is empty. Please add node to peek");
+                return;
+            }
+            Console.WriteLine("\n{0} is on the top of Stack", this.top.data);
         }
         public void Display()
         {

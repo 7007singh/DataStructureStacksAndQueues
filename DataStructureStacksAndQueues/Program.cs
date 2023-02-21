@@ -10,11 +10,16 @@ namespace DataStructureStacksAndQueues
     {
         static void Main(string[] args)
         {
-            StackLinkedList pushElement = new StackLinkedList();
-            pushElement.Push(56);
-            pushElement.Push(30);
-            pushElement.Push(70);
-            pushElement.Display();
+            StackLinkedList stack = new StackLinkedList();
+            stack.Push(56);
+            stack.Push(30);
+            stack.Push(70);
+            stack.Display();
+            while(stack.top != null)
+            {
+                stack.Peek();
+                stack.Pop();
+            }            
             Console.ReadLine();
         }
     }
