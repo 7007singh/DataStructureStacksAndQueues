@@ -12,7 +12,7 @@ namespace DataStructureStacksAndQueues
     {
         public Node top;
 
-        internal void Push(int data)
+        public void Push(int data)
         {
             Node newNode = new Node(data);
             if (top == null)
@@ -26,7 +26,7 @@ namespace DataStructureStacksAndQueues
             top = newNode;
             Console.WriteLine("{0} pushed", data);
         }
-        internal void Pop()
+        public void Pop()
         {
             if (top == null)
             {
@@ -37,7 +37,7 @@ namespace DataStructureStacksAndQueues
             Console.WriteLine("{0} poped", top.data);
             top = top.next;
         }
-        internal void Peek()
+        public void Peek()
         {
             if (top == null)
             {
