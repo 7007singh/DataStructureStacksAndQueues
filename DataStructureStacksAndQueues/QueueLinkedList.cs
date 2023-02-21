@@ -24,6 +24,22 @@ namespace DataStructureStacksAndQueues
             }
             Console.WriteLine("{0} inserted into Queue", data);
         }
+        public void Dequeue()
+        {
+            rear = front;
+            if (front == null)
+            {
+                Console.WriteLine("Queue is empty");
+            }
+            else
+            {
+                while(rear != null )
+                {
+                    Console.WriteLine("\n{0} removed", rear.data);
+                    rear = rear.next;
+                }
+            }
+        }
         public void Display()
         {
             Console.WriteLine("Displaying nodes");
